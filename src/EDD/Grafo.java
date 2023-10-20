@@ -13,7 +13,7 @@ public class Grafo {
     private Vertice [] verts;
     private int [][] matAd;
     
-    //Constructor
+    //Constructor h
     public Grafo(int mx){
         matAd = new int[mx][mx];
         verts = new Vertice[mx];
