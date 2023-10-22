@@ -87,9 +87,12 @@ public class Functions_Cargado {
         for (int i = 1; i < relations.length; i++) {
             String[] vertices_relacionados = relations[i].split(",");
             //list_users.
-           
+            if (vertices_relacionados.length == 2) {
+                String vs1 = vertices_relacionados[0];
+                String vs2 = vertices_relacionados[1];
+                graph.nuevoArco(graph.numVertice(vs1), graph.numVertice(vs2));
+            }
         }
-        
         return graph; 
     }
 }
