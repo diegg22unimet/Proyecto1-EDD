@@ -93,6 +93,48 @@ public class Grafo {
         numVerts--;
     }
     
+    //Método que crea un nuevo vértice con su respectiva adyacencia --PROBLEMA CON MaxVerts--
+    public void crearVertice(Grafo graph, String nuevo_vertice, String vertice_adyacente) {
+        if (numVerts >= MaxVerts) {
+            // Redimensionar el grafo para aumentar su capacidad
+            int nuevaCapacidad = MaxVerts + 1; // Aumentar la capacidad en este caso, puedes ajustarlo según tus necesidades
+            Vertice[] nuevosVerts = new Vertice[nuevaCapacidad];
+            int[][] nuevaMatAd = new int[nuevaCapacidad][nuevaCapacidad];
+
+            // Copiar los vértices existentes y la matriz de adyacencia al nuevo arreglo y nueva matriz
+            for (int i = 0; i < numVerts; i++) {
+                nuevosVerts[i] = verts[i];
+                System.arraycopy(matAd[i], 0, nuevaMatAd[i], 0, numVerts);  //error aquí
+            }
+
+            // Actualizar los arreglos y la capacidad del grafo
+            verts = nuevosVerts;
+            matAd = nuevaMatAd;
+            MaxVerts = nuevaCapacidad;
+
+            graph.setVerts(verts);
+            graph.setMatAd(matAd);
+            graph.setMaxVerts(MaxVerts);
+        }
+
+        // Crear el nuevo vértice y agregarlo al arreglo de vértices
+        Vertice v = new Vertice(nuevo_vertice);
+        verts[numVerts] = v;
+
+        // Obtener el índice del vértice adyacente
+        int indiceAdyacente = numVertice(vertice_adyacente);
+
+        if (indiceAdyacente == -1) {
+            System.out.println("El vértice adyacente " + vertice_adyacente + " no existe en el grafo.");
+            return;
+        }
+
+        // Establecer la conexión entre el nuevo vértice y el vértice adyacente en la matriz de adyacencia
+        matAd[numVerts][indiceAdyacente] = 1;
+
+        graph.setNumVerts(numVerts + 1);
+    }
+    
     //Método  para encontrar el numero del vertice dado un vertice
     public int numVertice(String vs) {
         Vertice v = new Vertice(vs);
