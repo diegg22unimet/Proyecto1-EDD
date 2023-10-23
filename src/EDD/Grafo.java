@@ -70,6 +70,29 @@ public class Grafo {
         }
     }
     
+    //Elimina un vertice dado su nombre
+    public void eliminarVertice(String nom) {
+        int indice = numVertice(nom);
+        if (indice == -1) {
+            System.out.println("El vértice " + nom + " no existe.");
+        }
+        // Desplazar los vértices y la matriz de adyacencia hacia la izquierda
+        for (int i = indice; i < numVerts - 1; i++) {
+            verts[i] = verts[i + 1];
+        }
+        for (int i = 0; i < numVerts; i++) {
+            for (int j = indice; j < numVerts - 1; j++) {
+                matAd[i][j] = matAd[i][j + 1];
+            }
+        }
+        for (int i = indice; i < numVerts - 1; i++) {
+            for (int j = 0; j < numVerts; j++) {
+                matAd[i][j] = matAd[i + 1][j];
+            }
+        }
+        numVerts--;
+    }
+    
     //Método  para encontrar el numero del vertice dado un vertice
     public int numVertice(String vs) {
         Vertice v = new Vertice(vs);
