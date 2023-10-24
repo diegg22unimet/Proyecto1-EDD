@@ -35,8 +35,35 @@ public class Functions_Graph {
     }
     
     //Funcion para eliminar un usuario del grafo
-    public void delete_user(Grafo grafo, String user){
-    
+    public Grafo delete_user(Grafo grafo, String user) {
+        int indice = grafo.numVertice(user);
+
+        if (indice != -1) {
+            Grafo nuevoGrafo = new Grafo(grafo.getNumVerts() - 1);
+            nuevoGrafo.setMaxVerts(grafo.getMaxVerts());
+            nuevoGrafo.setNumVerts(grafo.getNumVerts() - 1);
+            nuevoGrafo.setVerts(new Vertice[nuevoGrafo.getNumVerts()]);
+            nuevoGrafo.setMatAd(new int[nuevoGrafo.getNumVerts()][nuevoGrafo.getNumVerts()]);
+
+            int nuevoIndice = 0;
+            for (int i = 0; i < grafo.getNumVerts(); i++) {
+                if (i != indice) {
+                    nuevoGrafo.getVerts()[nuevoIndice] = grafo.getVerts()[i];
+                    nuevoIndice++;
+                }
+            }
+
+            for (int i = 0; i < nuevoGrafo.getNumVerts(); i++) {
+                for (int j = 0; j < nuevoGrafo.getNumVerts(); j++) {
+                    int valor = grafo.getMatAd()[i < indice ? i : i + 1][j < indice ? j : j + 1];
+                    nuevoGrafo.getMatAd()[i][j] = valor;
+                }
+            }
+
+            return nuevoGrafo;
+        }
+
+        return grafo;
     }
     
 }
