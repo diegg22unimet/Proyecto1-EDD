@@ -139,9 +139,13 @@ public class Cargar_Datos extends javax.swing.JFrame {
     private void Cargar_User_RelationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cargar_User_RelationActionPerformed
         try {
             Grafo graph = function.cargar_txt(Archivo_Cargado.getText());
+            JOptionPane.showMessageDialog(null, "Archivo cargado con éxito", "Cargado de datos", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception ex) {
             Logger.getLogger(Cargar_Datos.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.setVisible(false);
+        Menu ventana1 = new Menu(v1);
+        ventana1.setVisible(true);
         
     }//GEN-LAST:event_Cargar_User_RelationActionPerformed
 

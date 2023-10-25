@@ -62,7 +62,6 @@ public class Functions_Graph {
 
             return nuevoGrafo;
         }
-
         return grafo;
     }
     
