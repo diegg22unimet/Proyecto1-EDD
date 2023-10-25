@@ -146,7 +146,6 @@ public class Cargar_Datos extends javax.swing.JFrame {
         this.setVisible(false);
         Menu ventana1 = new Menu(v1);
         ventana1.setVisible(true);
-        
     }//GEN-LAST:event_Cargar_User_RelationActionPerformed
 
     /**
