@@ -4,11 +4,14 @@
  */
 package Interfaz;
 
+import EDD.Grafo;
+import Functions.Functions_Graph;
 import static Interfaz.Cargar_Datos.v1;
 
 public class Añadir_Usuario extends javax.swing.JFrame {
 
-    public static Modificar_Grafo v3; 
+    public static Modificar_Grafo v3;
+    public Functions_Graph function = new Functions_Graph();
     
     public Añadir_Usuario(Modificar_Grafo v3) {
         initComponents();
@@ -31,7 +34,7 @@ public class Añadir_Usuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         TITULO_Principal = new javax.swing.JLabel();
         nombre_usuarip = new javax.swing.JLabel();
-        user_name = new javax.swing.JTextField();
+        newUsername_field = new javax.swing.JTextField();
         user_relations = new javax.swing.JLabel();
         select_relation = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -40,7 +43,7 @@ public class Añadir_Usuario extends javax.swing.JFrame {
         volver = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
+        newRelation_field = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,12 +57,12 @@ public class Añadir_Usuario extends javax.swing.JFrame {
         nombre_usuarip.setText("Nombre Usuario");
         jPanel1.add(nombre_usuarip, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
-        user_name.addActionListener(new java.awt.event.ActionListener() {
+        newUsername_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                user_nameActionPerformed(evt);
+                newUsername_fieldActionPerformed(evt);
             }
         });
-        jPanel1.add(user_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 180, -1));
+        jPanel1.add(newUsername_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 180, -1));
 
         user_relations.setText("Usuario para Relacionar");
         jPanel1.add(user_relations, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
@@ -74,6 +77,11 @@ public class Añadir_Usuario extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 250, 200));
 
         agregar_user.setText("Agregar Usuario");
+        agregar_user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregar_userActionPerformed(evt);
+            }
+        });
         jPanel1.add(agregar_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 240, 40));
 
         volver.setText("Volver");
@@ -90,21 +98,21 @@ public class Añadir_Usuario extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 230, 200));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        newRelation_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                newRelation_fieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 170, -1));
+        jPanel1.add(newRelation_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 170, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void user_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_nameActionPerformed
+    private void newUsername_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUsername_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_user_nameActionPerformed
+    }//GEN-LAST:event_newUsername_fieldActionPerformed
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         this.setVisible(false);
@@ -112,9 +120,13 @@ public class Añadir_Usuario extends javax.swing.JFrame {
         ventana1.setVisible(true); 
     }//GEN-LAST:event_volverActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void newRelation_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newRelation_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_newRelation_fieldActionPerformed
+
+    private void agregar_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregar_userActionPerformed
+        
+    }//GEN-LAST:event_agregar_userActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,10 +172,10 @@ public class Añadir_Usuario extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField newRelation_field;
+    private javax.swing.JTextField newUsername_field;
     private javax.swing.JLabel nombre_usuarip;
     private javax.swing.JButton select_relation;
-    private javax.swing.JTextField user_name;
     private javax.swing.JLabel user_relations;
     private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables

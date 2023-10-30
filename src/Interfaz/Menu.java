@@ -30,7 +30,8 @@ public class Menu extends javax.swing.JFrame {
         Titulo_Principal = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
         modif_grafo = new javax.swing.JButton();
-        mostrar_grafo = new javax.swing.JButton();
+        actualizar_txt = new javax.swing.JButton();
+        mostrar_grafo1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,8 +58,16 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(modif_grafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, 30));
 
-        mostrar_grafo.setText("Mostrar Grafo");
-        jPanel1.add(mostrar_grafo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, -1, 30));
+        actualizar_txt.setText("Actualizar");
+        actualizar_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizar_txtActionPerformed(evt);
+            }
+        });
+        jPanel1.add(actualizar_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, 30));
+
+        mostrar_grafo1.setText("Mostrar Grafo");
+        jPanel1.add(mostrar_grafo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, -1, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -73,6 +82,10 @@ public class Menu extends javax.swing.JFrame {
         Modificar_Grafo ventana2 = new Modificar_Grafo(this);
         ventana2.setVisible(true);
     }//GEN-LAST:event_modif_grafoActionPerformed
+
+    private void actualizar_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizar_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizar_txtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,9 +124,10 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Titulo_Principal;
+    private javax.swing.JButton actualizar_txt;
     private javax.swing.JButton exit;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton modif_grafo;
-    private javax.swing.JButton mostrar_grafo;
+    private javax.swing.JButton mostrar_grafo1;
     // End of variables declaration//GEN-END:variables
 }
