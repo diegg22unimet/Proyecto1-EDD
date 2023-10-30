@@ -4,6 +4,8 @@
  */
 package Interfaz;
 
+import static Interfaz.Cargar_Datos.v1;
+
 
 public class Eliminar_Usuario extends javax.swing.JFrame {
 
@@ -58,12 +60,23 @@ public class Eliminar_Usuario extends javax.swing.JFrame {
         jPanel1.add(eliminar_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         volver.setText("Volver");
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
         jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        this.setVisible(false);
+        Menu ventana1 = new Menu(v1);
+        ventana1.setVisible(true);
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
