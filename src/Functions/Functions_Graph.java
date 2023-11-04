@@ -40,7 +40,6 @@ public class Functions_Graph {
 
         if (indice != -1) {
             Grafo nuevoGrafo = new Grafo(grafo.getNumVerts() - 1);
-            nuevoGrafo.setMaxVerts(grafo.getMaxVerts());
             nuevoGrafo.setNumVerts(grafo.getNumVerts() - 1);
             nuevoGrafo.setVerts(new Vertice[nuevoGrafo.getNumVerts()]);
             nuevoGrafo.setMatAd(new int[nuevoGrafo.getNumVerts()][nuevoGrafo.getNumVerts()]);

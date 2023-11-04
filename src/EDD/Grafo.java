@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 
 public class Grafo {
     private int numVerts;
-    private int MaxVerts;
     private Vertice [] verts;
     private int [][] matAd;
     
@@ -32,14 +31,6 @@ public class Grafo {
 
     public void setNumVerts(int numVerts) {
         this.numVerts = numVerts;
-    }
-
-    public int getMaxVerts() {
-        return MaxVerts;
-    }
-
-    public void setMaxVerts(int MaxVerts) {
-        this.MaxVerts = MaxVerts;
     }
 
     public Vertice[] getVerts() {
