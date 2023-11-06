@@ -19,7 +19,7 @@ public class Project1_23241 {
         Bienvenida ventana = new Bienvenida();
         ventana.setVisible(true);
 
-        //        ListaSimple list_user = new ListaSimple();
+//        ListaSimple list_user = new ListaSimple();
 //
 //        list_user.insertarAlFinal("@pepe");           //0
 //        list_user.insertarAlFinal("@mazinger");       //1
@@ -62,6 +62,7 @@ public class Project1_23241 {
 
 //        String p = graph.showElements();
 //        System.out.println(p);
+
     }
     
 }

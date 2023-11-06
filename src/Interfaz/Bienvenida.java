@@ -37,6 +37,9 @@ public class Bienvenida extends javax.swing.JFrame {
         empezar = new javax.swing.JButton();
         integrantes = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,7 +59,7 @@ public class Bienvenida extends javax.swing.JFrame {
         jPanel1.add(empezar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 140, 50));
 
         integrantes.setText("Integrantes: ");
-        jPanel1.add(integrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 110, 40));
+        jPanel1.add(integrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 80, 20));
 
         exit.setText("X");
         exit.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +68,15 @@ public class Bienvenida extends javax.swing.JFrame {
             }
         });
         jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 50, 40));
+
+        jLabel1.setText("Samuel Prieto");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, -1, -1));
+
+        jLabel2.setText("Diego Manzanilla");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+
+        jLabel3.setText("Santiago Lanz");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 250));
 
@@ -131,6 +143,9 @@ public class Bienvenida extends javax.swing.JFrame {
     private javax.swing.JButton empezar;
     private javax.swing.JButton exit;
     private javax.swing.JLabel integrantes;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

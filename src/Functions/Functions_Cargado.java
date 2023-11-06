@@ -47,15 +47,6 @@ public class Functions_Cargado {
         }
     }
 
-    //Funcion para escribir txt cuando se finalice el programa
-    public void escribir_txt(Grafo grafo) {
-
-    }
-
-    public void leer_txt(Grafo grafo) {
-
-    }
-
     public Grafo cargar_txt(String txt) throws Exception {
 
         ListaSimple list_users = new ListaSimple();

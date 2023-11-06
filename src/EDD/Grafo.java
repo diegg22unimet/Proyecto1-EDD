@@ -121,80 +121,56 @@ public class Grafo {
         }
     }
     
-    //Agrega un nuevo usuario
+    //Agrega un nuevo usuario al grafo pasando por parametro su nombre
     public void addUser(String name) {
-        // Crear una nueva matriz de adyacencia con un vértice adicional
         int[][] nuevaMatrizAdyacencia = new int[getNumVerts() + 1][getNumVerts() + 1];
-
-        // Copiar los valores de la matriz de adyacencia existente a la nueva matriz
         for (int i = 0; i < getNumVerts(); i++) {
             for (int j = 0; j < getNumVerts(); j++) {
                 nuevaMatrizAdyacencia[i][j] = getMatAd()[i][j];
             }
         }
-
-        // Crear un nuevo arreglo de vértices con un vértice adicional
         Vertice[] nuevosVertices = new Vertice[getNumVerts() + 1];
-
-        // Copiar los vértices existentes al nuevo arreglo
         for (int i = 0; i < getNumVerts(); i++) {
             nuevosVertices[i] = getVerts()[i];
         }
-
-        // Crear el nuevo vértice con el nombre especificado y agregarlo al arreglo
         Vertice nuevoVertice = new Vertice(name, getNumVerts());
-//        int nuevoVerticeNum = getNumVerts(); // Obtener el número del nuevo vértice
         nuevosVertices[getNumVerts()] = nuevoVertice;
-//        getVerts()[nuevoVerticeNum].setNumVertice(nuevoVerticeNum);
-
-        // Actualizar los atributos del grafo utilizando setters
         setNumVerts(getNumVerts() + 1);
         setMatAd(nuevaMatrizAdyacencia);
         setVerts(nuevosVertices);
     }
     
+    //Elimina un usuario del grafo pasando por parametro el numero de su vertice
     public void deleteUser(int index) {
-        // Verificar si el índice del vértice a eliminar es válido
         if (index < 0 || index >= getNumVerts()) {
             System.out.println("Índice de vértice inválido");
-            return;
         }
-
-        // Crear una nueva matriz de adyacencia con un vértice menos
         int[][] nuevaMatrizAdyacencia = new int[getNumVerts() - 1][getNumVerts() - 1];
-
-        // Copiar los valores de la matriz de adyacencia existente a la nueva matriz, omitiendo la fila y columna correspondientes al vértice a eliminar
         int filaDestino = 0;
         int columnaDestino;
         for (int filaOrigen = 0; filaOrigen < getNumVerts(); filaOrigen++) {
             if (filaOrigen == index) {
-                continue; // Saltar la fila correspondiente al vértice a eliminar
+                continue;
             }
             columnaDestino = 0;
             for (int columnaOrigen = 0; columnaOrigen < getNumVerts(); columnaOrigen++) {
                 if (columnaOrigen == index) {
-                    continue; // Saltar la columna correspondiente al vértice a eliminar
+                    continue;
                 }
                 nuevaMatrizAdyacencia[filaDestino][columnaDestino] = getMatAd()[filaOrigen][columnaOrigen];
                 columnaDestino++;
             }
             filaDestino++;
         }
-
-        // Crear un nuevo arreglo de vértices con un vértice menos
         Vertice[] nuevosVertices = new Vertice[getNumVerts() - 1];
-
-        // Copiar los vértices existentes al nuevo arreglo, omitiendo el vértice a eliminar
         int indiceDestino = 0;
         for (int indiceOrigen = 0; indiceOrigen < getNumVerts(); indiceOrigen++) {
             if (indiceOrigen == index) {
-                continue; // Saltar el vértice a eliminar
+                continue;
             }
             nuevosVertices[indiceDestino] = getVerts()[indiceOrigen];
             indiceDestino++;
         }
-
-        // Actualizar los atributos del grafo utilizando setters
         setNumVerts(getNumVerts() - 1);
         setMatAd(nuevaMatrizAdyacencia);
         setVerts(nuevosVertices);

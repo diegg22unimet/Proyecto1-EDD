@@ -5,13 +5,11 @@
 package Interfaz;
 
 import EDD.Grafo;
-import Functions.Functions_Graph;
 import static Interfaz.Cargar_Datos.v1;
 
 public class Añadir_Usuario extends javax.swing.JFrame {
 
     public static Modificar_Grafo v3;
-    public Functions_Graph function = new Functions_Graph();
     
     public Añadir_Usuario(Modificar_Grafo v3) {
         initComponents();
